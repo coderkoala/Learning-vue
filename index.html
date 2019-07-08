@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Hello World</h3>
+    <div id="app">
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+            const app = new Vue({
+                el : '#app',
+                data: {
+                    john: {
+                        name : "John",
+                        age : "21"
+                    },
+
+                    jim: {
+                        name : "Jim",
+                        age : "22"
+                    }
+                    },
+                template: `<div>
+                
+                    <p>My name is {{john.name}}, and I'm {{john.age}}</p>
+                    <p>My name is {{jim.name}}, and I'm {{jim.age}}</p>
+
+                    </div>
+                            `
+            });
+    </script>
+
+</body>
+</html>
