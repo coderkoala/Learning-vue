@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <H3>{{title}}</H3>
+        <li v-for="name in names" v-text = "name"></li><br>
+    </div>
+
+    <input id = "add" type="text">
+    <button id="press">Add name</button>
+
+
+    <script src="vue"></script>
+    <script>
+
+            let vueInstance = new Vue({
+
+                el: "#root",
+                data: {
+                    names : [],
+                    title : "Names"
+                },
+
+
+                mounted() {
+                    function pushNewVal(){
+                    let appendName = document.querySelector('#add');
+                    vueInstance.names.push(appendName.value);
+                    // ---
+                    // Reminder : Try and solve your own
+                    //            Waterfall challenge
+                    // ---
+                    appendName.value = '';
+                    }
+    
+                    window.addEventListener('keypress', event => {
+                        //if (event.keyCode !== 13){
+                        if (event.keyCode === 13){
+                            pushNewVal();
+                        }
+
+                    document.querySelector('#press').addEventListener('click' , pushNewVal());
+                    });
+                }
+            });
+    
+
+    </script>
+</body>
+</html>
